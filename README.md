@@ -2,8 +2,8 @@
 (text between brackets to be removed)
 
 > * Group Name: GESS what?!
-> * Group participants names: Lanzetti Nicolas
-					   Moscato Giovanni
+> * Group participants names: Lanzetti Nicolas;
+					   Moscato Giovanni;
 					   Neumann Marc
 > * Project Title: (can be changed later)
 
