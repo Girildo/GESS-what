@@ -2,15 +2,18 @@
 (text between brackets to be removed)
 
 > * Group Name: GESS what?!
-> * Group participants names: Lanzetti Nicolas;
-					   Moscato Giovanni;
-					   Neumann Marc
-> * Project Title: (can be changed later)
+> * Group participants names:Lanzetti Nicolas;
+					  Moscato Giovanni;
+					  Neumann Marc
+> * Project Title: Axelrod's model with spatial considerations according to Schelling's model.
 
 ## General Introduction
 
-(States your motivation clearly: why is it important / interesting to solve this problem?)
-(Add real-world examples, if any)
+It's interesting to analyse and understand the cultural and social motivations behind aggregation and segregation of individuals.
+In any heterogeneous social environment (such as big cities) we can observe both isolation of groups of people (e.g. "China Town") and cultural integration.
+
+Schelling's was developed to describe the racial and economic segregation in the USA.
+
 (Put the problem into a historical context, from what does it originate? Are there already some proposed solutions?)
 
 ## The Model
