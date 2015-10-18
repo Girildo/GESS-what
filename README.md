@@ -5,7 +5,7 @@
 					   Lanzetti Nicolas;
 					   Moscato Giovanni;
 					   Neumann Marc
-> * Project Title: Axelrod's model with spatial considerations according to Schelling's model.
+> * Project Title: Social aggregation in a multicultural environment
 
 ## General Introduction
 
@@ -16,7 +16,7 @@ Social separation has always existed and has gained particular importance in the
 
 ## The Model
 
-The model will based on the following factors:
+The model will be based on the following factors:
 * Satisfaction factor (how do single agents "feel" in their condition) depends on cultural affinity with neighbours;
 * Segregation index (how spread are different cultures).
 
