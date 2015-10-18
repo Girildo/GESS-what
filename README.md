@@ -1,5 +1,4 @@
 # MATLAB Fall 2015 Research Plan (Template)
-(text between brackets to be removed)
 
 > * Group Name: GESS what?!
 > * Group participants names: Balerna Camillo;
