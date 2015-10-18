@@ -2,9 +2,10 @@
 (text between brackets to be removed)
 
 > * Group Name: GESS what?!
-> * Group participants names:Lanzetti Nicolas;
-					  Moscato Giovanni;
-					  Neumann Marc
+> * Group participants names: Balerna Camillo;
+					   Lanzetti Nicolas;
+					   Moscato Giovanni;
+					   Neumann Marc
 > * Project Title: Axelrod's model with spatial considerations according to Schelling's model.
 
 ## General Introduction
@@ -12,36 +13,37 @@
 It's interesting to analyse and understand the cultural and social motivations behind aggregation and segregation of individuals.
 In any heterogeneous social environment (such as big cities) we can observe both isolation of groups of people (e.g. "China Town") and cultural integration.
 
-Schelling's was developed to describe the racial and economic segregation in the USA.
-
-(Put the problem into a historical context, from what does it originate? Are there already some proposed solutions?)
+Social separation has always existed and has gained particular importance in the last decades thanks to people migrational behaviour.
 
 ## The Model
-
-(Define dependent and independent variables you want to study. Say how you want to measure them.) (Why is your model a good abtraction of the problem you want to study?) (Are you capturing all the relevant aspects of the problem?)
+Satisfaction factor (how do single agents "feel" in their condition) depends on cultural affinity with neighbours
+Segregation index (how spread are different cultures)
+Within the problem of segretion, cultural background strongly influences the actions of the single agent. Therefore a combination of both Schelling's and Axelrod's model is appropriate.
 
 
 ## Fundamental Questions
 
-(At the end of the project you want to find the answer to these questions)
-(Formulate a few, clear questions. Articulate them in sub-questions, from the more general to the more specific. )
+How easy is it for a group of heterogeneous cultures to coexist and successfully interact with each other?
+In what circumstances do people prefer to relocate rather than adapt to other's culture?
+To what extent do we observe ghettos?
+How does population density play a factor in this processes?
 
 
 ## Expected Results
+We expect increasing strength in spatial separation as the cultural differences enlarge. On the other hand we predict that integration gets easier in a more homogeneous cultural environment.
 
-(What are the answers to the above questions that you expect to find before starting your research?)
 
 
 ## References 
 
-(Add the bibliographic references you intend to use)
-(Explain possible extension to the above models)
-(Code / Projects Reports of the previous year)
+1) http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/
+2) R. Axelrod, The Dissemination of Culture, Journal of Conflict Resolution, 1997
+
 
 
 ## Research Methods
 
-(Cellular Automata, Agent-Based Model, Continuous Modeling...) (If you are not sure here: 1. Consult your colleagues, 2. ask the teachers, 3. remember that you can change it afterwards)
+Agent-Based model.
 
 
 ## Other
