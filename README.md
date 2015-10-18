@@ -37,6 +37,7 @@ We expect increasing strength in spatial separation as the cultural differences 
 ## References 
 
 1) http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/
+
 2) R. Axelrod, The Dissemination of Culture, Journal of Conflict Resolution, 1997
 
 
