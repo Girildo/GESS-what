@@ -18,8 +18,9 @@ Social separation has always existed and has gained particular importance in the
 ## The Model
 
 The model will based on the following factors:
-> * Satisfaction factor (how do single agents "feel" in their condition) depends on cultural affinity with neighbours;
-> * Segregation index (how spread are different cultures).
+* Satisfaction factor (how do single agents "feel" in their condition) depends on cultural affinity with neighbours;
+* Segregation index (how spread are different cultures).
+
 Within the problem of segretion, cultural background strongly influences the actions of the single agent. Therefore a combination of both Schelling's and Axelrod's model is appropriate.
 
 
