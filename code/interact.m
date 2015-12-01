@@ -5,7 +5,9 @@ neighbours = getNeighbours(grid, N, F, Q, x, y);
 randomNeighbour = randperm(size(neighbours,2));
 randomFeature = randperm(F);
 
+
 nb = min(round(0.5 * (size(neighbours,2))*rand(1,1)),F);
+nb = 1;
 
 for i=1:nb
     grid(x, y, randomFeature(i)) = neighbours(randomFeature(i), randomNeighbour(i));

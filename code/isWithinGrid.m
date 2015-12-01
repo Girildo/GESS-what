@@ -1,6 +1,6 @@
 function ok = isWithinGrid (N, x, y)
-    ok = 0;
-    if (x >= 1 && y >= 1 && x <= N && y <= N)
-        ok = 1;
+    ok = 1;
+    if (x == 0 || y == 0 || x == (N+1) || y == (N+1))
+        ok = 0;
     end
 end

@@ -20,8 +20,11 @@ positions = [
 for i = 1:8
     xNew = x + positions(i, 1);
     yNew = y + positions(i, 2);
-    if(isWithinGrid(N, xNew, yNew))
-        neighbours(:, i) = squeeze(grid(xNew, yNew, :)); % Extract '3rd' dimension from grid and squeezes it
+    
+    if( (x>1 && x<N && y > 1 && y < N) ||  isWithinGrid(N, xNew, yNew))
+        if(~isEmpty(grid, xNew, yNew))
+            neighbours(:, i) = squeeze(grid(xNew, yNew, :)); % Extract '3rd' dimension from grid and squeezes it
+        end
     end
 end
 

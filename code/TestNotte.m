@@ -2,17 +2,21 @@ clear all;
 close all;
 clc;
 
-N = 20;
-res = 1/N;
+run parameters
 
-tolInterval = zeros(N*N,2);
+n = 10;
+res = 1/n;
 
-for i = 1:20
-    for j = 1:i
-        a = i*res; % greatest value (max tolerance)
-        b = j*res; % smallest value (min tolerance)
-        tolInterval((i-1)*N+j,:) = [b, a];
-        main(b, a);
+tolInterval = zeros(n*n,2);
+
+for vacancies = 0.05:0.05:0.3
+    for i = 1:n
+        for j = 1:i
+            a = i*res; % greatest value (max tolerance)
+            b = j*res; % smallest value (min tolerance)
+            tolInterval((i-1)*n+j,:) = [b, a];
+            main(time, N, F, Q, w, vacancies, [b a]);
+        end
     end
-end 
+end
 

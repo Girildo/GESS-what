@@ -13,10 +13,11 @@ function grid = initializeGrid(N, F, Q, vacancies)
             if (rand(1) > vacancies) % If someone is there
                 for k=1:F
                     % Rand trait
-%                     if ((x-50)^2 + (y-50)^2 < 200) 
-%                     grid(x,y,k) = round(6.5 + (4).*rand(1,1));
-%                     else grid(x,y,k) = round(0.5 + (2).*rand(1,1));
-                    grid(x,y,k) = round(0.5 + Q * rand(1,1));
+%                     if ((x-30)^2 + (y-30)^2 < 200) 
+%                     grid(x,y,k) = 10;
+%                     else grid(x,y,k) = 1;
+%                     end
+                      grid(x,y,k) = round(0.5 + Q * rand(1,1));
                 end
             end 
         end

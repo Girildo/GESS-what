@@ -1,33 +1,36 @@
-function grid = main()
+function grid = main(time, N, F, Q, w, vacancies, tolInterval)
 
-close all;
-clear;
-clc;
+if(nargin() == 0)
+    run parameters
+end
 
-time = 200;                           % Simulation time
-N = 75;                              % Spatial grid size
-F = 3;                               % Grid depth = number of features
-Q = 10;                              % # of possible traits pro feature
-w = ones(F, 1);                      % Weights for the features
-vacancies = 0.1;                     % Blank spaces
-tolInterval = [0.15 0.60];           % Tolerance interval for interaction
 data = 1;                            % if data = 1: data analyis                                      
-print = 0;                           % if data = 1: data analyis
-%Cmap = [colormap('hot'); [1 1 1]];  % Define color map
-Cmap = customColormap(4);
-% Initialize grid with initial (random) values
-grid = initializeGrid(N, F, Q, vacancies);
-featureCountHistory = [calculateUniqueVectorsCount(grid, N, F, Q)];
+print = 1;                           % if data = 1: data analyis
+Cmap = customColormap(4);            % Define color map
 
-for t = 1:time+1
+
+% Initialize grid with initial (random) values
+grid = initializeGrid(N, F, Q, vacancies);    
+grid = initialCondition(grid, 'circle', N, F, Q, radius);
+
+featureCountHistory = [calculateUniqueVectorsCount(grid, N, F, Q)];
+graphVisualization = zeros(3,1);
+
+% Zero Time
+t = 1;
+
+% Data analysis
+if (data == 1)
+    satisfactionIndex = dataAnalysis(grid, N, F, Q, w, t);
+    [satisfactionPlot, graphVisualization] = satisfactionMatrix(grid, satisfactionIndex, N, t, tolInterval, graphVisualization);
+end
+
+figure(1);
+plotGridDirect(grid, N, F, Q, w, satisfactionPlot, t, featureCountHistory, graphVisualization)
+
+for t = 2:time+1
     indexesx = randperm(N);
     indexesy = randperm(N);
-    
-    % Data analysis
-    if (data == 1)
-        satisfactionIndex = dataAnalysis(grid, N, F, Q, w, t);
-        satisfactionPlot = satisfactionMatrix(grid, satisfactionIndex, N, t, tolInterval);
-    end
     
     % Choose agent
     for i=1:N % Iteration for the x-coordinate
@@ -38,23 +41,12 @@ for t = 1:time+1
             
             if (~isEmpty(grid, x, y))
                 % Compute satisfaction factor
-%                 p = computeProbability(grid, N, F, Q, w, x, y);
-%                 
-%                 p = p > 0.65;
-%                 pCount = p(p ~= 0); % Neighbours you agree with
-%                 
-%                 % Check
-%                 if ((size(pCount, 2)/size(p, 2)) < tolInterval(1))
-%                     grid = moverandom(grid, N, F, x, y);
-%                 elseif ((size(pCount, 2)/size(p, 2)) < tolInterval(2))
-%                     grid = interact(grid, N, F, Q, p, x, y);
-%                 end
-
                 p = computeProbabilityAxel(grid, N, F, Q, w, x, y);
-               
+                %p = computeProbability(grid, N, F, Q, w, x, y);
+                
                 if (p < tolInterval(1))
-                    grid = moverandom(grid, N, F, x, y);
-                    %grid = moveCheck(grid, N, F, Q, w, x, y, tolInterval);
+                    %grid = moverandom(grid, N, F, x, y);
+                    grid = moveCheck(grid, N, F, Q, w, x, y, tolInterval);
                 elseif (p < tolInterval(2))
                     grid = interact(grid, N, F, Q, p, x, y);
                 end
@@ -62,21 +54,26 @@ for t = 1:time+1
         end
     end
     
-last = figure(1);
-plotGridDirect(grid, N, F, Q, w, satisfactionPlot, t, data, tolInterval, Cmap)
+    % Data analysis
+    if (data == 1)
+        satisfactionIndex = dataAnalysis(grid, N, F, Q, w, t);
+        [satisfactionPlot, graphVisualization] = satisfactionMatrix(grid, satisfactionIndex, N, t, tolInterval, graphVisualization);
+        featureCountHistory = [featureCountHistory calculateUniqueVectorsCount(grid, N, F, Q)];
+    end
+    
+    figure(1);
+    plotGridDirect(grid, N, F, Q, w, satisfactionPlot, t, featureCountHistory, graphVisualization)
+    %set(gca,'fontsize',16);
+        
+    if all(satisfactionPlot == 0 | satisfactionPlot == 3) % break if nothing happens
+        break;
+    end
+end 
+
 if print == 1
-    set(last, 'PaperPosition', [0 0 40 18])
-    saveas(figure(1),[pwd strcat('/figures/tol1=',num2str(a),', tol2=', num2str(b),', Last.png')],'png')
+    set(figure(1), 'PaperPosition', [0 0 40 18])
+    saveas(figure(1),[pwd strcat('/figures/tol1=',num2str(tolInterval(1)),...
+        ', tol2=', num2str(tolInterval(2)),', vac=',num2str(vacancies),'.png')],'png')
 end
-
-featureCountHistory = [featureCountHistory calculateUniqueVectorsCount(grid, N, F, Q)];
-figure(2);
-plot(1:t+1, featureCountHistory);
-ylim([0 1000]);
-title('Unique feature vectors');
-if all(satisfactionPlot == 0 | satisfactionPlot == 3) % break if nothing happens
-    break;
-end
-
 
 end 

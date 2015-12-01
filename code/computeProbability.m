@@ -15,6 +15,11 @@ for i = 1:size(neighbours, 2)
     p(i) = 1 - 1/((Q-1)*sum(w))*sum(partialSum);
 end 
 
-ptot = p;
+p = p > 0.65;
+pCount = p(p ~= 0); % Neighbours you agree with
+
+% Check
+ptot = size(pCount, 2)/size(p, 2);
+
 end
 
