@@ -25,8 +25,8 @@ Within the problem of segretion, cultural background strongly influences the act
 
 ## Fundamental Questions
 
-How easy is it for a group of heterogeneous cultures to coexist and successfully interact with each other?
-In what circumstances do people prefer to relocate rather than adapt to other's culture?
+How easy is it for a group of heterogeneous cultures to successfully interact and coexist with each other?
+In what circumstances do people prefer to relocate rather than adapt to other's culture? How does the exigency of the single agents influence the output of our simulation?
 To what extent do we observe ghettos?
 How does population density play a factor in this processes?
 
