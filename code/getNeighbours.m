@@ -1,5 +1,4 @@
 function  neighbours  = getNeighbours (grid, N, F, Q, x, y)
-%   GETNEIGHBOURS Summary of this function goes here
 %   Returns a matrix (Fx8) containing the traits of all 8 neighbours mapped as
 %   [2 1 8]
 %   [3 X 7]
@@ -23,7 +22,8 @@ for i = 1:8
     
     if( (x>1 && x<N && y > 1 && y < N) ||  isWithinGrid(N, xNew, yNew))
         if(~isEmpty(grid, xNew, yNew))
-            neighbours(:, i) = squeeze(grid(xNew, yNew, :)); % Extract '3rd' dimension from grid and squeezes it
+            % Extract '3rd' dimension from grid and squeezes it
+            neighbours(:, i) = squeeze(grid(xNew, yNew, :)); 
         end
     end
 end

@@ -1,4 +1,6 @@
-function grid = moveCheck(grid, N, F, Q, w, xstart, ystart, tolInterval)
+function grid = moveCheck(grid, N, F, Q, xstart, ystart, tolInterval)
+% Returns the grid after one agent has moved (smartly)
+
 xnew = xstart;
 ynew = ystart;
 
@@ -41,7 +43,7 @@ while (finish ~= 0 && finish < 100)
     
     finish = finish + 1;
     
-    if computeProbabilityAxel(grid, N, F, Q, w, xstart, ystart) > tolInterval(1)
+    if computeProbabilityAxel(grid, N, F, Q, xstart, ystart) > tolInterval(1)
         finish = 0;
     end
 end

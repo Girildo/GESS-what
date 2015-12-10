@@ -1,4 +1,6 @@
 function [satisfactionMatrix, graphVisualization] = satisfactionMatrix(grid, satisfactionIndex, N, t, tolInterval, graphVisualization)
+% Returns the satisfaction matrix and the number of satisfied, interacting
+% and unhappy agents
 
 happy = 0;          % happy people in the grid
 middle = 0;         % people who interact

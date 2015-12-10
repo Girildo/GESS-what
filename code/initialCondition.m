@@ -1,4 +1,5 @@
 function grid = initialCondition(grid, string, N, F, Q, radius)
+% Set a given initial condition to a random grid
 
 if strcmp(string, 'leopard')
     xc = round(rand(10,1)*N);
